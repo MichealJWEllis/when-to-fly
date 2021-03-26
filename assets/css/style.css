@@ -23,7 +23,7 @@ body {
 .parent {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
+  grid-template-rows: repeat(auto, 1fr);
   grid-column-gap: 3px;
   grid-row-gap: 3px;
 }
