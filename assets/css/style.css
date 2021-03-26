@@ -1,7 +1,48 @@
-/* body {
-  background: url(../images/hero.jpg) no-repeat center center fixed;
+* {
+  margin: 0px;
+  padding: 2px;
+}
+html {
+  background-color: black !important;
+}
+
+body {
+  background: url(../images/photo-1506947411487-a56738267384.jpg) no-repeat
+    center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-} */
+}
+
+.uk-card-default,
+.uk-navbar-container {
+  background-color: rgba(255, 255, 255, 0.315) !important;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-column-gap: 3px;
+  grid-row-gap: 3px;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 13;
+}
+.div2 {
+  grid-area: 2 / 1 / 4 / 7;
+}
+.div3 {
+  grid-area: 2 / 7 / 4 / 13;
+}
+.div4 {
+  grid-area: 4 / 1 / 8 / 7;
+}
+.div5 {
+  grid-area: 4 / 7 / 8 / 13;
+}
+.div6 {
+  grid-area: 10 / 3 / 8 / 11;
+}
