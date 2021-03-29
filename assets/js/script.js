@@ -8,20 +8,24 @@ zoom: 2 // starting zoom
 });
 // Will take input from user to zero in on map to users location
 $("#subButton").click(function () {
-  str = $("#userInput").val();
+  zipper = $("#userInput").val();
+  zipInput = parseInt(zipper)
+  if (isNaN(zipInput)) {
+    alert("Please enter a valid Zip code!")
+    $("#userInput").val('');
+    location.reload();
+  }
   zipLookUp();
 });
 // Use of opendatasoft.com to get the longitude and latitude of user via zip code
 function zipLookUp() {
-  let mike = parseInt(str);
+  let locSearch = zipInput
   // console.log(mike);
-  fetch('https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=' + mike + '&facet=state&facet=timezone&facet=dst')
+  fetch('https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=' + locSearch + '&facet=state&facet=timezone&facet=dst')
     .then(response => response.json())
     .then(function (data) {
       lon = data.records[0].geometry.coordinates[0]
       lat = data.records[0].geometry.coordinates[1]
-
-      console.log(lon, lat)
       mapZipDisplay();
     });
 }
@@ -38,6 +42,7 @@ function mapZipDisplay() {
     });
   }
 }
+  
 
 
 
