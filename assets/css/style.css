@@ -14,7 +14,15 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-
+.maps {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background-color: black;
+}
 .uk-card-default,
 .uk-navbar-container {
   background-color: rgba(255, 255, 255, 0.315) !important;

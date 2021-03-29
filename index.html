@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.18/dist/css/uikit.min.css" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+
     <title>When To Fly</title>
 </head>
 
@@ -33,13 +36,11 @@
         <div class="div3">
             <div>
                 <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-                    <h3 class="uk-card-title">Zip Code and Email</h3>
-                    <p>Please Enter Zip Code:</p>
-                    <input type="text">
-                    <p>Please Enter Zip Code:</p>
-                    <input type="text">
-
-
+                    <h3 class="uk-card-title">Please Enter Zip Code & Email:</h3>
+                    <h4>Zip Code:</h4>
+                    <input type="text" id="userInput"><button id="subButton">Enter</button>
+                    <h4>Email:</h4>
+                    <input type="text"><button>Enter</button>
                 </div>
             </div>
         </div>
@@ -47,10 +48,8 @@
             <div>
                 <div class="uk-card uk-card-default uk-card-hover uk-card-body">
                     <h3 class="uk-card-title">Parks Map</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus sed quod maxime cupiditate laborum ad officiis suscipit accusantium laboriosam? Quis optio debitis velit earum tempore, quibusdam nam! Architecto, mollitia sequi?
-                    Quas atque eaque dolorum ullam veritatis quidem, quos doloremque blanditiis porro culpa a, non quod minus ab nesciunt vero expedita nisi cupiditate. Accusantium, fuga! Neque laborum itaque ea aliquam unde.
-                    Corrupti minus nulla vero atque rem suscipit nisi quibusdam voluptate ex ea, voluptatibus aut sequi numquam molestiae culpa quidem eos assumenda consectetur error impedit sed adipisci odit commodi. Quae, eveniet?
-                    Sapiente quo excepturi tempore? Perspiciatis quo facere vero? Fuga eius possimus autem et laboriosam quibusdam aliquam hic libero sit suscipit repellendus ut rerum dolor quisquam consequuntur, quis tempora maxime porro! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam, cum? Eaque aliquid consequuntur ipsum veritatis quaerat praesentium doloremque, vitae at, cumque eligendi tempora perferendis ex dolore.</p>
+                    <div id="map" class="maps"></div>
+
                 </div>
             </div>
         </div>
@@ -69,40 +68,15 @@
             </div>
         </div>
     </div>
-
-    <!-- <div class="uk-navbar-container">
-        <h1 class="uk-heading-line uk-text-center"><span>HERE TO HELP YOU GET FLIGHT READY</span></h1>
-    </div>
-    <section class="uk-column-1-2">
-        <div class="uk-child-width-1-2@s uk-grid-match" uk-grid>
-            <div>
-                <div class="uk-card uk-card-hover uk-card-body">
-                    <h3 class="uk-card-title">Hover</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-                    <h3 class="uk-card-title">Default</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-primary uk-card-hover uk-card-body uk-light">
-                    <h3 class="uk-card-title">Primary</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-            </div>
-            <div>
-                <div class="uk-card uk-card-secondary uk-card-hover uk-card-body uk-light">
-                    <h3 class="uk-card-title">Secondary</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+
+
