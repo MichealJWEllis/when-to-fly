@@ -34,7 +34,7 @@ function zipLookUp() {
       lon = data.records[0].geometry.coordinates[0]
       lat = data.records[0].geometry.coordinates[1]
       mapZipDisplay();
-      // fiveDay();
+      fiveDay();
     });
 }
 // Adjusts the map to the users current location via zip with an adjusted zoom level.
@@ -66,30 +66,30 @@ function randoVideo() {
   };
 }
 
-// function fiveDay() {
-//   // console.log(lon, lat);
-//   // console.log(apiKey);
-//   fetch('http://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=imperial')
-//     .then(function (response) {
-//       return (response.json())
-//     })
-//     .then(function (five) {
-//       // console.log(five);
-//       for (let i = 0; i != five.list.length; i += 8) {
-//         // console.log(five.list[i]);
-//         let aDate = five.list[i].dt_txt;
-//         let bDate = aDate.slice(0, 10);
-//         let fiveDate = moment(bDate).format('MM/DD/YY');
-//         let aTemp = five.list[i].main.temp;
-//         let bTemp = Math.floor(aTemp);
-//         let aIcon = five.list[i].weather[0].icon;
-//         let bIcon = 'https://openweathermap.org/img/w/' + aIcon + '.png';
-//         // let wind = five.wind.speed + " MPH";
-//         console.log(fiveDate, bTemp)
-//       }
-//     })
+function fiveDay() {
+  // console.log(lon, lat);
+  // console.log(apiKey);
+  fetch('http://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=imperial')
+    .then(function (response) {
+      return (response.json())
+    })
+    .then(function (five) {
+      // console.log(five);
+      for (let i = 0; i != five.list.length; i += 8) {
+        console.log(five.list[i]);
+        let aDate = five.list[i].dt_txt;
+        let bDate = aDate.slice(0, 10);
+        let fiveDate = moment(bDate).format('MM/DD/YY');
+        let aTemp = five.list[i].main.temp;
+        let bTemp = Math.floor(aTemp);
+        let aIcon = five.list[i].weather[0].icon;
+        let bIcon = 'https://openweathermap.org/img/w/' + aIcon + '.png';
+        // let wind = five.wind.speed + " MPH";
+        console.log(fiveDate, bTemp)
+      }
+    })
 
-// }
+}
 
 randoVideo();
 
