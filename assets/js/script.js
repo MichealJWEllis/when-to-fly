@@ -52,12 +52,12 @@ function mapZipDisplay() {
 function randoVideo() {
   var videos = ["https://www.youtube.com/embed/7vFCA2EVxbo", "https://www.youtube.com/embed/5pOZ9L5cr00", "https://www.youtube.com/embed/hpGVW3PWJeE", "https://www.youtube.com/embed/p98MzO8APqE", "https://www.youtube.com/embed/cA76r-pZtIs","https://www.youtube.com/embed/P_w_SxRu7ZU"];
   window.onload = function () {
-    var playerDiv = document.getElementById("random_player");
+    var playerDiv = document.getElementById("rando_player");
     var player = document.createElement("iframe");
-    var randomVideoUrl = videos[Math.floor(Math.random() * videos.length)];
+    var randomVidUrl = videos[Math.floor(Math.random() * videos.length)];
     player.setAttribute('width', '100%');
-    player.setAttribute('height', '340');
-    player.setAttribute('src', randomVideoUrl);
+    player.setAttribute('height', '310');
+    player.setAttribute('src', randomVidUrl);
 
     playerDiv.appendChild(player);
   };
