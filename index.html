@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.18/dist/css/uikit.min.css" />
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/jpg" href="./assets/images/circle-cropped.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="./assets/images/"/>
     
 
     <title>When To Fly</title>
@@ -54,14 +54,20 @@
         <div class="div6">
             <div class="uk-card uk-card-default uk-card-hover uk-card-body">
                 <h3 class="uk-card-title">Five Day Forecast</h3>
+                <div class="uk-grid-small uk-child-width-1-4@s uk-flex " uk-grid>
+                    
+                    
+                    
+                </div>
 
             </div>
         </div>
         <div class="div5">
             <div class="uk-card uk-card-default uk-card-hover uk-card-body">
                 <h3 class="uk-card-title">Drone Flying Tips:</h3>
-                <button id="reload" class="example_d">Random Tip</button>
-                <div id="rando_player"></div>
+                <button id="reload" onclick="randoVideo()"
+                        class="example_d">Random Tip</button>
+                <div id="rando_player" />
             </div>
         </div>
     </div>

@@ -76,3 +76,12 @@ body {
 .div6 {
   grid-area: 10 / 3 / 8 / 11;
 }
+
+/* .uk-card-default {
+  margin: 1px !important;
+  padding: 10px !important;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+} */

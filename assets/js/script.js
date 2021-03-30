@@ -67,7 +67,7 @@ function randoVideo() {
 }
 
 function fiveDay() {
-  // console.log(lon, lat);
+  console.log(lon, lat);
   // console.log(apiKey);
   fetch('http://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=imperial')
     .then(function (response) {
@@ -84,8 +84,9 @@ function fiveDay() {
         let bTemp = Math.floor(aTemp);
         let aIcon = five.list[i].weather[0].icon;
         let bIcon = 'https://openweathermap.org/img/w/' + aIcon + '.png';
-        // let wind = five.wind.speed + " MPH";
-        console.log(fiveDate, bTemp)
+        // let wind = five.list.wind.speed + " MPH";
+        // console.log(wind)
+        $(".uk-grid-small").append('<div></div><div class="uk-card uk-card-default uk-card-body"><h5>' + fiveDate + '</h5><img src=' + bIcon + '/><p>Temp: ' + bTemp + '</p></div></div>')
       }
     })
 
