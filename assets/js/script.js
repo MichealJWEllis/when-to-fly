@@ -18,18 +18,24 @@ $("#subButton").click(function () {
   zipLookUp();
 });
 // Use of opendatasoft.com to get the longitude and latitude of user via zip code
+// opendatasoft api for zip code conversion to longitude latitude
+// https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=&facet=state&facet=timezone&facet=dst
+// example of use
+// https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=43606&facet=state&facet=timezone&facet=dst
 function zipLookUp() {
   let locSearch = zipInput
   // console.log(mike);
   fetch('https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=' + locSearch + '&facet=state&facet=timezone&facet=dst')
-    .then(response => response.json())
-    .then(function (data) {
-      lon = data.records[0].geometry.coordinates[0]
-      lat = data.records[0].geometry.coordinates[1]
-      mapZipDisplay();
+  // function converted via VSC suggestion
+  .then(response => response.json())
+  .then(function (data) {
+    lon = data.records[0].geometry.coordinates[0]
+    lat = data.records[0].geometry.coordinates[1]
+    mapZipDisplay();
     });
 }
-// Adjusts the map to the users current location via zip with an adjusted zoom level. 
+// Adjusts the map to the users current location via zip with an adjusted zoom level.
+// Includes Api key for map 
 function mapZipDisplay() {
   areaUpdate();
   function areaUpdate() {
@@ -42,7 +48,21 @@ function mapZipDisplay() {
     });
   }
 }
-  
+// Random drone tips video on page reload. 
+function randoVideo() {
+  var videos = ["https://www.youtube.com/embed/7vFCA2EVxbo", "https://www.youtube.com/embed/5pOZ9L5cr00", "https://www.youtube.com/embed/hpGVW3PWJeE", "https://www.youtube.com/embed/p98MzO8APqE", "https://www.youtube.com/embed/cA76r-pZtIs","https://www.youtube.com/embed/P_w_SxRu7ZU"];
+  window.onload = function () {
+    var playerDiv = document.getElementById("random_player");
+    var player = document.createElement("iframe");
+    var randomVideoUrl = videos[Math.floor(Math.random() * videos.length)];
+    player.setAttribute('width', '100%');
+    player.setAttribute('height', '340');
+    player.setAttribute('src', randomVideoUrl);
+
+    playerDiv.appendChild(player);
+  };
+}
+randoVideo();
 
 
 
@@ -51,12 +71,5 @@ function mapZipDisplay() {
 
 
 
-// fetch('https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=' + test() + '=state&facet=timezone&facet=dst')
-//   .then(response => response.json())
-//   .then(data => console.log(data));
 
 
-// opendatasoft api for zip code conversion to longitude latitude
-// https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=&facet=state&facet=timezone&facet=dst
-// example of use
-// https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=43606&facet=state&facet=timezone&facet=dst
