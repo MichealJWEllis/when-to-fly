@@ -91,6 +91,15 @@ input[type=text] {
   outline: none;
   font-size: 15px;
 }
+#dropDownBox {
+  background-color: rgba(0, 255, 51, 0.529);
+  color: white;
+  border: 2px solid white;
+  border-radius: 4px;
+  outline: none;
+  font-size: 15px;
+  width: 265px;
+}
 
 #forcastBox {
   display: flex;
