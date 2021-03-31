@@ -3,6 +3,7 @@
 3. [Installation. ](#installation)
 4. [Screenshots. ](#screenshots)
 5. [Contributions. ](#contributions)
+6. [License. ](#license)
 
 
 
@@ -34,4 +35,7 @@ Weather.
 
 
 ## 5. Contributions
-Pull requests are welcome. For major changes, please open let repository owner know to discuss what would you like to change.
+Pull requests are welcome. For major changes, please open let repository owners know to discuss what would you like to change.
+
+## 6. License
+None
