@@ -17,8 +17,20 @@ When-To-Fly is a website inspired by a group of University of Texas at Austin Co
 Launch the site in default browser.
 
 ## 4. Screenshots
-Top Page
+Top Page.
 ![Top-Page-Area](./assets/images/top-page.png?raw=true "Top-Page-Area")
+Landing Page.
+![Top-Page-Area](./assets/images/main-landing-page.png?raw=true "Top-Page-Area")
+Site Description.
+![Top-Page-Area](./assets/image/site-description.png?raw=true "Top-Page-Area")
+Zip Code Entry.
+![Top-Page-Area](./assets/images/zip-code-entry.png?raw=true "Top-Page-Area")
+Parks Map.
+![Top-Page-Area](./assets/images/parks-map.png?raw=true "Top-Page-Area")
+Flying Tips.
+![Top-Page-Area](./assets/images/flying-tips.png?raw=true "Top-Page-Area")
+Weather.
+![Top-Page-Area](./assets/images/weather.png?raw=true "Top-Page-Area")
 
 
 ## 5. Contributions
