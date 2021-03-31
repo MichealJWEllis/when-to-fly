@@ -63,6 +63,10 @@ function randoVideo() {
     player.setAttribute('src', randomVidUrl);
 
     playerDiv.appendChild(player);
+    document.getElementById("reload").addEventListener("click", function () {
+      $('#rando_player').html('');
+      onload();
+    })
   };
 }
 
@@ -84,16 +88,20 @@ function fiveDay() {
         let bTemp = Math.floor(aTemp);
         let aIcon = five.list[i].weather[0].icon;
         let bIcon = 'https://openweathermap.org/img/w/' + aIcon + '.png';
-        // let wind = five.list.wind.speed + " MPH";
+        let wind = five.list[i].wind.speed + " MPH";
         // console.log(wind)
-        $(".uk-grid-small").append('<div></div><div class="uk-card uk-card-default uk-card-body"><h5>' + fiveDate + '</h5><img src=' + bIcon + '/><p>Temp: ' + bTemp + '</p></div></div>')
+        console.log(aIcon);
+        console.log(bIcon);
+        $(".uk-grid-small").append('<div><div class="uk-card uk-card-default uk-card-body"><h5>' + fiveDate + '</h5><img src=' + bIcon + '><p>Temp: ' + bTemp + '</p></div></div>')
       }
     })
 
 }
 
 randoVideo();
+// document.getElementById("reload").addEventListener("click", function() {
 
+// })
 
 
 
