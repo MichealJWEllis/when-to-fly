@@ -26,7 +26,6 @@ body {
   transition: all 0.3s ease 0s;
   margin: 5px !important;
   outline: none;  
-
 }
 .example_d:hover {
   color: #494949 !important;
@@ -34,6 +33,11 @@ body {
   border-color: #20bf6b !important;
   transition: all 0.3s ease 0s;
   outline: none;
+  
+}
+.forum {
+  text-align: center;
+  
 }
 .maps {
   width: 100%;
@@ -43,6 +47,9 @@ body {
   bottom: 0;
   border-radius: 5px;
   background-color: black;
+}
+.uk-card-title {
+  text-align: center;
 }
 .uk-card-default,
 .uk-navbar-container {
@@ -62,7 +69,7 @@ body {
   grid-area: 1 / 1 / 2 / 13;
 }
 .div2 {
-  grid-area: 2 / 1 / 4 / 7;
+  grid-area: 2 / 1 / 4 / 13;
 }
 .div3 {
   grid-area: 2 / 7 / 4 / 13;
