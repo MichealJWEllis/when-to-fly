@@ -74,9 +74,18 @@ body {
   grid-area: 4 / 7 / 8 / 13;
 }
 .div6 {
-  grid-area: 10 / 3 / 8 / 11;
-}
+  grid-area: 10 / 1 / 8 / 13;
 
+}
+#forcastBox {
+  display: flex;
+  flex: auto;
+}
+@media screen and (max-width: 800px) {
+  #forcastBox {
+    flex-direction: column;
+  }
+}
 /* .uk-card-default {
   margin: 1px !important;
   padding: 10px !important;
