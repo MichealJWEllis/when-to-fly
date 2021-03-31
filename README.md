@@ -22,7 +22,7 @@ Top Page.
 Landing Page.
 ![Top-Page-Area](./assets/images/main-landing-page.png?raw=true "Top-Page-Area")
 Site Description.
-
+![Top-Page-Area](./assets/images/site-description.png?raw=true "Top-Page-Area")
 Zip Code Entry.
 ![Top-Page-Area](./assets/images/zip-code-entry.png?raw=true "Top-Page-Area")
 Parks Map.
