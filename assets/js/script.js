@@ -18,6 +18,7 @@ $("#subButton").click(function () {
     location.reload();
   } else {
     $("#userInput").val('');
+    $('#forcastBox').html('');
   }
   zipLookUp();
 });
@@ -94,6 +95,7 @@ function fiveDay() {
         // console.log(wind)
         console.log(aIcon);
         console.log(bIcon);
+        
         $("#forcastBox").append('<div><div class="uk-card uk-card-default uk-card-body"><h5>' + fiveDate + '</h5><img src=' + bIcon + '><p>Temp: ' + bTemp + ' °F</p><p>Wind Speed: ' + wind + '</p></div></div>')
       }
     })
