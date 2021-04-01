@@ -14,15 +14,15 @@ var map = new mapboxgl.Map({
 
 // Will take input from user to zero in on map to users location
 $("#subButton").click(function () {
-  var zipper = $("#userInput").val();
-  var zipInput = parseInt(zipper)
+  zipper = $("#userInput").val();
+  zipInput = parseInt(zipper)
 
   // Stores last used zipcode in local storage.
   const zipcode = JSON.parse(localStorage.getItem("zipcode")) || [];
   const savedZip = zipper;
   zipcode.push(savedZip);
   localStorage.setItem("zipcode", JSON.stringify(zipcode));
-    $("#dropDownBox").append("<option>" + savedZip + "</option>");
+    $("#dropDownBox").append("<option value=" + savedZip +">" + savedZip + "</option>");
   if (isNaN(zipInput)) {
     alert("Please enter a valid Zip code!");
     $("#userInput").val('');
@@ -31,13 +31,8 @@ $("#subButton").click(function () {
     $("#userInput").val('');
     $('#forcastBox').html('');
   }
+  zipLookUp();
 });
-// function loadLocalStorage() {
-//   $("#dropDownBox").append("<option id='options'>" + savedZip + "</option>");
-// }
-// window.addEventListener('load', loadLocalStorage);
-
-
 
 // Use of opendatasoft.com to get the longitude and latitude of user via zip code
 // opendatasoft api for zip code conversion to longitude latitude
@@ -118,14 +113,18 @@ function fiveDay() {
 }
 
 randoVideo();
+function pastZip(e) {
+  document.getElementById("userInput").value = e.target.value
+}
 
+function loadLocalStorage() {
+  const zipcode = JSON.parse(localStorage.getItem("zipcode"));
+ for (var i = 0; i < zipcode.length; i++){
+  $("#dropDownBox").append("<option value=" + zipcode[i] + ">" + zipcode[i] + "</option>");
+  }
 
-
-// const zips = [];
-  // const savedZip = zipper;
-  // zips.push(savedZip);
-  // LocalStorage.setItem("zips", JSON.stringify(zips))
-  // JSON.parse(localStorage.getItem("zips"));
+}
+loadLocalStorage();
 
 
 
