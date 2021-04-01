@@ -22,7 +22,7 @@ $("#subButton").click(function () {
   const savedZip = zipper;
   zipcode.push(savedZip);
   localStorage.setItem("zipcode", JSON.stringify(zipcode));
-    $("#dropDownBox").append("<option value=" + savedZip +">" + savedZip + "</option>");
+    $("#dropDownBox").append("<option id='options' value=" + savedZip +">" + savedZip + "</option>");
   if (isNaN(zipInput)) {
     alert("Please enter a valid Zip code!");
     $("#userInput").val('');
@@ -122,13 +122,17 @@ function pastZip(e) {
 function loadLocalStorage() {
   const zipcode = JSON.parse(localStorage.getItem("zipcode"));
  for (var i = 0; i < zipcode.length; i++){
-  $("#dropDownBox").append("<option value=" + zipcode[i] + ">" + zipcode[i] + "</option>");
+  $("#dropDownBox").append("<option id='options' value=" + zipcode[i] + ">" + zipcode[i] + "</option>");
   }
-
 }
 loadLocalStorage();
 
-
+function clearLocalStorage() {
+  $("#clearLocal").click(function (){
+localStorage.clear();
+  })
+}
+clearLocalStorage();
 
 
 
