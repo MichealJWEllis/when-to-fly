@@ -1,4 +1,4 @@
-// var dropDownEl = document.getElementById("dropDownBox");
+
 // API Key openweather
 
 const apiKey = "b773ba3167fd9791028d0f0f123759cc";
@@ -113,10 +113,12 @@ function fiveDay() {
 }
 
 randoVideo();
+// allows you to select a past used zipcode to submit
 function pastZip(e) {
   document.getElementById("userInput").value = e.target.value
 }
 
+//load localStorage into select menu on page loadup
 function loadLocalStorage() {
   const zipcode = JSON.parse(localStorage.getItem("zipcode"));
  for (var i = 0; i < zipcode.length; i++){
