@@ -18,9 +18,16 @@ $("#subButton").click(function () {
   zipInput = parseInt(zipper)
 
   // Stores last used zipcode in local storage.
-  localStorage.setItem("zipcode", JSON.stringify(zipper));
-  var savedZip = JSON.parse(localStorage.getItem("zipcode"));
-  $(dropDownEl).append("<option>" + savedZip + "</option>");
+  const zipcode = JSON.parse(localStorage.getItem("zipcode")) || [];
+  const savedZip = zipper;
+  zipcode.push(savedZip);
+  localStorage.setItem("zipcode", JSON.stringify(zipcode));
+  var localStorageZipcode = localStorage.getItem("zipcode");
+  var zipcode2 = JSON.parse(localStorageZipcode);
+  for (i = 0; i < zipcode.length; i++){
+    $(dropDownEl).append("<option>" + zipcode2[i] + "</option>");
+  }; 
+ 
   if (isNaN(zipInput)) {
     alert("Please enter a valid Zip code!");
     $("#userInput").val('');
@@ -33,10 +40,10 @@ $("#subButton").click(function () {
 });
 
 // Loads local storage on page load
-var loadLocalStorage = function () {
-  $(dropDownEl).append("<option>" + JSON.parse(localStorage.getItem("zipcode")) + "</option>")
-}
-window.addEventListener('load', loadLocalStorage);
+// var loadLocalStorage = function () {
+//   $(dropDownEl).append("<option id='options'>" +  + "</option>");
+// }
+// window.addEventListener('load', loadLocalStorage);
 
 // Use of opendatasoft.com to get the longitude and latitude of user via zip code
 // opendatasoft api for zip code conversion to longitude latitude
@@ -120,7 +127,11 @@ randoVideo();
 
 
 
-
+// const zips = [];
+  // const savedZip = zipper;
+  // zips.push(savedZip);
+  // LocalStorage.setItem("zips", JSON.stringify(zips))
+  // JSON.parse(localStorage.getItem("zips"));
 
 
 
