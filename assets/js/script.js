@@ -14,8 +14,8 @@ var map = new mapboxgl.Map({
 
 // Will take input from user to zero in on map to users location
 $("#subButton").click(function () {
-  zipper = $("#userInput").val();
-  zipInput = parseInt(zipper)
+  var zipper = $("#userInput").val();
+  var zipInput = parseInt(zipper)
 
   // Stores last used zipcode in local storage.
   const zipcode = JSON.parse(localStorage.getItem("zipcode")) || [];
@@ -31,14 +31,13 @@ $("#subButton").click(function () {
     $("#userInput").val('');
     $('#forcastBox').html('');
   }
-  zipLookUp();
 });
+// function loadLocalStorage() {
+//   $("#dropDownBox").append("<option id='options'>" + savedZip + "</option>");
+// }
+// window.addEventListener('load', loadLocalStorage);
 
-// Loads local storage on page load
-var loadLocalStorage = function () {
-  $(dropDownEl).append("<option id='options'>" + JSON.parse(localStorage.getItem("zipcode")) + "</option>");
-}
-window.addEventListener('load', loadLocalStorage);
+
 
 // Use of opendatasoft.com to get the longitude and latitude of user via zip code
 // opendatasoft api for zip code conversion to longitude latitude
