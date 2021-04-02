@@ -3,6 +3,10 @@
 
 const apiKey = "b773ba3167fd9791028d0f0f123759cc";
 
+
+
+
+
 // Default view for map of the North American continent.
 mapboxgl.accessToken = 'pk.eyJ1IjoibWVsbGlzMTAyMzk2IiwiYSI6ImNrbXVwcDhhNjEzeXEyd3E1cmdjOWc0emwifQ.Jusfg2NUaXj_tZbA899ZSg';
 var map = new mapboxgl.Map({
@@ -13,25 +17,31 @@ var map = new mapboxgl.Map({
 });
 
 // Will take input from user to zero in on map to users location
-$("#subButton").click(function () {
+$("#subButton").click(function (e) {
   zipper = $("#userInput").val();
   zipInput = parseInt(zipper)
 
   // Stores last used zipcode in local storage.
   const zipcode = JSON.parse(localStorage.getItem("zipcode")) || [];
   const savedZip = zipper;
-  zipcode.push(savedZip);
-  localStorage.setItem("zipcode", JSON.stringify(zipcode));
-    $("#dropDownBox").append("<option id='options' value=" + savedZip +">" + savedZip + "</option>");
+
+
+
+  // $("#dropDownBox").append("<option id='options' value=" + savedZip + ">" + savedZip + "</option>");
   if (isNaN(zipInput)) {
-    alert("Please enter a valid Zip code!");
+    // alert("Please enter a valid Zip code!");
+    UIkit.modal.dialog('<p>UIkit dialog!</p>');
     $("#userInput").val('');
-    location.reload();
+    // location.reload();
   } else {
+    zipLookUp(zipInput);
+    zipcode.push(savedZip);
+    localStorage.setItem("zipcode", JSON.stringify(zipcode));
+    loadLocalStorage();
     $("#userInput").val('');
     $('#forcastBox').html('');
   }
-  zipLookUp();
+  // zipLookUp();
 });
 
 // Use of opendatasoft.com to get the longitude and latitude of user via zip code
@@ -39,7 +49,7 @@ $("#subButton").click(function () {
 // https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=&facet=state&facet=timezone&facet=dst
 // example of use
 // https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=43606&facet=state&facet=timezone&facet=dst
-function zipLookUp() {
+function zipLookUp(zipInput) {
   let locSearch = zipInput
   fetch('https://public.opendatasoft.com/api/records/1.0/search/?dataset=us-zip-code-latitude-and-longitude&q=' + locSearch + '&facet=state&facet=timezone&facet=dst')
 
@@ -103,10 +113,10 @@ function fiveDay() {
         let aIcon = five.list[i].weather[0].icon;
         let bIcon = 'https://openweathermap.org/img/w/' + aIcon + '.png';
         let wind = five.list[i].wind.speed;
-        
+
         $("#forcastBox").append('<div><div class="uk-card uk-card-default uk-card-body"><h5>' + fiveDate + '</h5><img src=' + bIcon + '><p>Temp: ' + bTemp + ' °F</p><p>Wind Speed: ' + wind + ' m/s</p></div></div>')
 
-        
+
       }
     })
 
@@ -121,18 +131,17 @@ function pastZip(e) {
 //load localStorage into select menu on page loadup
 function loadLocalStorage() {
   const zipcode = JSON.parse(localStorage.getItem("zipcode")) || [];
- for (var i = 0; i < zipcode.length; i++){
-  $("#dropDownBox").append("<option id='options' value=" + zipcode[i] + ">" + zipcode[i] + "</option>");
+  for (var i = 0; i < zipcode.length; i++) {
+    $("#dropDownBox").append("<option id='options' value=" + zipcode[i] + ">" + zipcode[i] + "</option>");
   }
 }
-loadLocalStorage();
+// loadLocalStorage();
 // will clear localStorage, dropdown box, reload page to remove weather and reset map 
 function clearLocalStorage() {
-  $("#clearLocal").click(function (){
+  $("#clearLocal").click(function () {
     $("#dropDownBox").html('');
     location.reload();
-    
-localStorage.clear();
+    localStorage.clear();
   })
 }
 clearLocalStorage();
