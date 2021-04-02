@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.18/dist/css/uikit.min.css" />
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+    <link rel="shortcut icon" type="image/jpg" href="./assets/images/circle-cropped.png" />
+
 
     <title>When To Fly</title>
 </head>
@@ -26,45 +27,50 @@
                 <p>Drones are categorized as Unmanned Aircraft Systems (UAS), which with other kinds of aircrafting
                     systems are becoming highly available in almost all major electronic retail stores and online
                     marketers. Every user of such technology, be it for business purposes or personal use, desires
-                    operating them whenevr, wherever and most especially, making safe operation a priority. Conversely,
+                    operating them whenever, wherever and most especially, making safe operation a priority. Conversely,
                     it is very easy to pick one up from the shelf for use by prospective operators, but without the
-                    awareness that, you cant just fly or operate them anytime nor anywhere. When-To-Fly is a website
+                    awareness that, you can't just fly or operate them anytime nor anywhere. When-To-Fly is a website
                     inspired by a group of University of Texas at Austin Coding BootCamp students, that provides drone
                     users/operators with all the guidance and information required for responsible and safe operation.
-                </p>
+                    </p>
+                    <h3 class="uk-card-title">Please Enter Zip Code:</h3>
+                    <div class="forum">
+                    <input type="text" id="userInput"><button id="subButton" class="example_d">Submit</button>
+                    <label for="previouslyUsedZip"><h3 class="uk-card-title">Last used zipcode:</h3></label>
+                    <select name="previouslyUsedZip" id="dropDownBox" onchange="pastZip(event)"></select><button id="clearLocal" class="example_d">Clear</button>
+                    </div>
             </div>
         </div>
         <div class="div3">
             <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-                <h3 class="uk-card-title">Please Enter Zip Code:</h3>
-                <!-- <h4>Zip Code:</h4> -->
-                <input type="text" id="userInput"><button id="subButton" class="example_d">Submit</button>
-                <!-- <h4>Email:</h4>
-                <input type="text"><button class="example_d">Submit</button> -->
+                <h3 class="uk-card-title">Parks 🌳 are in green on map!</h3>
+                <div id="map" class="maps"></div>
             </div>
         </div>
         <div class="div4">
-            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-                <h3 class="uk-card-title">Parks 🌳 are in green on map!</h3>
-                <div id="map" class="maps"></div>
-
-            </div>
-        </div>
-        <div class="div6">
-            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-                <h3 class="uk-card-title">Weather</h3>
-
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body" id="div6Box">
+                <h3 class="uk-card-title">Five Day Forecast</h3>
+                <div class="uk-grid-small uk-child-width-1-4@s uk-flex" id="forcastBox">
+                </div>
             </div>
         </div>
         <div class="div5">
             <div class="uk-card uk-card-default uk-card-hover uk-card-body">
                 <h3 class="uk-card-title">Drone Flying Tips:</h3>
-                <button id="reload" onclick="randoVideo()"
-                        class="example_d">Random Tip</button>
-                <div id="rando_player" />
+                <button id="reload" class="example_d">Random Tip</button>
+                <div id="rando_player">
             </div>
         </div>
     </div>
+    <div class="div6">
+        <footer class="uk-navbar-container">
+            <h1 class="uk-heading-line uk-text-center"><span>&#169; When To Fly</span></h1>
+        </footer>
+    </div>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>

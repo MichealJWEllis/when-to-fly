@@ -1,10 +1,8 @@
 1. [Project Title. ](#title)
 2. [Description. ](#desc)
 3. [Installation. ](#installation)
-4. [Web Link. ](#web)
-5. [Screenshots. ](#screenshots)
-6. [Contributions. ](#contributions)
-7. [License. ](#license)
+4. [Screenshots. ](#screenshots)
+5. [Contributions. ](#contributions)
 
 
 
@@ -18,6 +16,7 @@ When-To-Fly is a website inspired by a group of University of Texas at Austin Co
 ## 3. Installation Command
 Launch the site in default browser.
 
+<<<<<<< HEAD
 ## 4. Web Link
 
 
@@ -43,3 +42,10 @@ Pull requests are welcome. For major changes, please open let repository owners 
 
 ## 7. License
 None
+=======
+## 4. Screenshots
+
+
+## 5. Contributions
+Pull requests are welcome. For major changes, please open let repository owner know to discuss what would you like to change.
+>>>>>>> develop
