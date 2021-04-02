@@ -120,7 +120,7 @@ function pastZip(e) {
 
 //load localStorage into select menu on page loadup
 function loadLocalStorage() {
-  const zipcode = JSON.parse(localStorage.getItem("zipcode"));
+  const zipcode = JSON.parse(localStorage.getItem("zipcode")) || [];
  for (var i = 0; i < zipcode.length; i++){
   $("#dropDownBox").append("<option id='options' value=" + zipcode[i] + ">" + zipcode[i] + "</option>");
   }
@@ -129,6 +129,9 @@ loadLocalStorage();
 
 function clearLocalStorage() {
   $("#clearLocal").click(function (){
+    $("#dropDownBox").html('');
+    location.reload();
+    
 localStorage.clear();
   })
 }
