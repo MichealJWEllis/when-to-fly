@@ -87,14 +87,14 @@ function randoVideo() {
 }
 
 function fiveDay() {
-  console.log(lon, lat);
+  // console.log(lon, lat);
   fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=imperial')
     .then(function (response) {
       return (response.json())
     })
     .then(function (five) {
       for (let i = 0; i != five.list.length; i += 8) {
-        console.log(five.list[i]);
+        // console.log(five.list[i]);
         let aDate = five.list[i].dt_txt;
         let bDate = aDate.slice(0, 10);
         let fiveDate = moment(bDate).format('MM/DD/YY');
@@ -102,11 +102,11 @@ function fiveDay() {
         let bTemp = Math.floor(aTemp);
         let aIcon = five.list[i].weather[0].icon;
         let bIcon = 'https://openweathermap.org/img/w/' + aIcon + '.png';
-        let wind = five.list[i].wind.speed + " MPH";
-        console.log(aIcon);
-        console.log(bIcon);
+        let wind = five.list[i].wind.speed;
+        
+        $("#forcastBox").append('<div><div class="uk-card uk-card-default uk-card-body"><h5>' + fiveDate + '</h5><img src=' + bIcon + '><p>Temp: ' + bTemp + ' °F</p><p>Wind Speed: ' + wind + ' m/s</p></div></div>')
 
-        $("#forcastBox").append('<div><div class="uk-card uk-card-default uk-card-body"><h5>' + fiveDate + '</h5><img src=' + bIcon + '><p>Temp: ' + bTemp + ' °F</p><p>Wind Speed: ' + wind + '</p></div></div>')
+        
       }
     })
 
@@ -126,7 +126,7 @@ function loadLocalStorage() {
   }
 }
 loadLocalStorage();
-
+// will clear localStorage, dropdown box, reload page to remove weather and reset map 
 function clearLocalStorage() {
   $("#clearLocal").click(function (){
     $("#dropDownBox").html('');
