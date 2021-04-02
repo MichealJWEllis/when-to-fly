@@ -24,13 +24,8 @@ $("#subButton").click(function (e) {
   // Stores last used zipcode in local storage.
   const zipcode = JSON.parse(localStorage.getItem("zipcode")) || [];
   const savedZip = zipper;
-
-
-
-  // $("#dropDownBox").append("<option id='options' value=" + savedZip + ">" + savedZip + "</option>");
   if (isNaN(zipInput)) {
-    // alert("Please enter a valid Zip code!");
-    UIkit.modal.dialog('<p>UIkit dialog!</p>');
+    UIkit.modal.dialog('<p>Please Enter a Valid ZIP code!</p>');
     $("#userInput").val('');
     // location.reload();
   } else {
@@ -97,14 +92,12 @@ function randoVideo() {
 }
 
 function fiveDay() {
-  // console.log(lon, lat);
   fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=imperial')
     .then(function (response) {
       return (response.json())
     })
     .then(function (five) {
       for (let i = 0; i != five.list.length; i += 8) {
-        // console.log(five.list[i]);
         let aDate = five.list[i].dt_txt;
         let bDate = aDate.slice(0, 10);
         let fiveDate = moment(bDate).format('MM/DD/YY');
@@ -135,7 +128,7 @@ function loadLocalStorage() {
     $("#dropDownBox").append("<option id='options' value=" + zipcode[i] + ">" + zipcode[i] + "</option>");
   }
 }
-// loadLocalStorage();
+
 // will clear localStorage, dropdown box, reload page to remove weather and reset map 
 function clearLocalStorage() {
   $("#clearLocal").click(function () {
