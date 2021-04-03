@@ -58,6 +58,12 @@ function mapZipDisplay() {
       center: [lon, lat],
       zoom: 11
     });
+    map.addControl(
+      new MapboxDirections({
+        accessToken: mapboxgl.accessToken
+      }),
+      'top-left'
+    );
   }
 }
 // Random drone tips video on page reload. 
@@ -94,7 +100,7 @@ function fiveDay() {
         let wind = five.list[i].wind.speed;
 
         $("#forcastBox").append('<div><div class="uk-card uk-card-default uk-card-body"><h5>' + fiveDate + '</h5><img src=' + bIcon + '><p>Temp: ' + bTemp + ' °F</p><p>Wind: ' + wind + ' m/s</p></div></div>')
-      
+
 
       }
     })
@@ -124,4 +130,5 @@ loadLocalStorage();
 
 // Notes: 
 // still need to add if statement to apply conditionals on flight days.
-// use direction map instead. Link: https://docs.mapbox.com/help/tutorials/getting-started-directions-api/
+// use direction map instead. Link: https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-directions/
+// got directions on map - will need to adjust css
