@@ -39,11 +39,11 @@
                     <label for="previouslyUsedZip">
                         <h3 class="uk-card-title">Last used zipcode:</h3>
                     </label>
-                    <select name="previouslyUsedZip" id="dropDownBox" onchange="pastZip(event)"></select><button
+                    <select name="previouslyUsedZip" id="dropDownBox" onclick="pastZip(event)"></select><button
                         id="clearLocal" class="example_d">Clear</button>
                 </div>
-                
-                    <div class=".uk-modal-dialog" ></div>
+
+
 
 
             </div>
@@ -74,6 +74,7 @@
                 <h1 class="uk-heading-line uk-text-center"><span>&#169; When To Fly</span></h1>
             </footer>
         </div>
+        <div class=".uk-modal-dialog"></div>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.18/dist/js/uikit.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.18/dist/js/uikit-icons.min.js"></script>
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
