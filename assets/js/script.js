@@ -93,7 +93,7 @@ function fiveDay() {
         let bIcon = 'https://openweathermap.org/img/w/' + aIcon + '.png';
         let wind = five.list[i].wind.speed;
 
-        $("#forcastBox").append('<div><div class="uk-card uk-card-default uk-card-body"><h5>' + fiveDate + '</h5><img src=' + bIcon + '><p>Temp: ' + bTemp + ' °F</p><p>Wind Speed: ' + wind + ' m/s</p></div></div>')
+        $("#forcastBox").append('<div><div class="uk-card uk-card-default uk-card-body"><h5>' + fiveDate + '</h5><img src=' + bIcon + '><p>Temp: ' + bTemp + ' °F</p><p>Wind: ' + wind + ' m/s</p></div></div>')
         // still need to add if statement to apply conditionals on flight days. 
 
       }
