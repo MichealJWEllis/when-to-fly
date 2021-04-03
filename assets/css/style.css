@@ -117,8 +117,11 @@ input[type="text"] {
   display: flex;
   flex: auto;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
   #forcastBox {
     flex-direction: column;
+  }
+  .uk-card-default {
+    text-align: center;
   }
 }
