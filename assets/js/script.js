@@ -98,8 +98,14 @@ function fiveDay() {
         let aIcon = five.list[i].weather[0].icon;
         let bIcon = 'https://openweathermap.org/img/w/' + aIcon + '.png';
         let wind = five.list[i].wind.speed;
-
-        $("#forcastBox").append('<div><div class="uk-card uk-card-default uk-card-body"><h5>' + fiveDate + '</h5><img src=' + bIcon + '><p>Temp: ' + bTemp + ' °F</p><p>Wind: ' + wind + ' m/s</p></div></div>')
+        let countId = 0;
+        console.log(wind)
+        if (wind > 5) {
+          console.log("test");
+          countId++
+          
+        }
+        $("#forcastBox").append('<div><div data-id="' + countId + '" class="uk-card uk-card-default uk-card-body"><h5>' + fiveDate + '</h5><img src=' + bIcon + '><p>Temp: ' + bTemp + ' °F</p><p>Wind: ' + wind + ' m/s</p></div></div>')
 
 
       }
