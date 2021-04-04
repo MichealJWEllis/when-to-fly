@@ -40,11 +40,20 @@ function zipLookUp(zipInput) {
     // function converted via VSC suggestion
     .then(response => response.json())
     .then(function (data) {
-      lon = data.records[0].geometry.coordinates[0]
-      lat = data.records[0].geometry.coordinates[1]
-      mapZipDisplay();
-      fiveDay();
-    });
+      console.log(data);
+      if (data.records.length > 0) {
+        lon = data.records[0].geometry.coordinates[0]
+        lat = data.records[0].geometry.coordinates[1]
+        mapZipDisplay();
+        fiveDay();
+      } else {
+        UIkit.modal.dialog('<p>Please Enter a Valid ZIP code!</p>');
+      }
+    })
+    .catch(err => {
+      console.error(err)
+    })
+
 }
 // Adjusts the map to the users current location via zip with an adjusted zoom level.
 // Includes Api key for map 
@@ -98,14 +107,15 @@ function fiveDay() {
         let aIcon = five.list[i].weather[0].icon;
         let bIcon = 'https://openweathermap.org/img/w/' + aIcon + '.png';
         let wind = five.list[i].wind.speed;
-        let countId = 0;
-        console.log(wind)
-        if (wind > 5) {
-          console.log("test");
-          countId++
-          
+        let test = '';
+        if (wind > 9) {
+          test = "highWind"
+        } else if (wind > 5) {
+          test = "cautionWind"
+        } else {
+          test = "lowWind"
         }
-        $("#forcastBox").append('<div><div data-id="' + countId + '" class="uk-card uk-card-default uk-card-body"><h5>' + fiveDate + '</h5><img src=' + bIcon + '><p>Temp: ' + bTemp + ' °F</p><p>Wind: ' + wind + ' m/s</p></div></div>')
+        $("#forcastBox").append('<div><div class="uk-card uk-card-body ' + test  + '"><h5>' + fiveDate + '</h5><img src=' + bIcon + '><p>Temp: ' + bTemp + ' °F</p><p>Wind: ' + wind + ' m/s</p></div></div>')
 
 
       }
@@ -134,5 +144,4 @@ $("#clearLocal").click(function () {
 
 loadLocalStorage();
 
-// Notes: 
-// still need to add if statement to apply conditionals on flight days.
+

@@ -79,6 +79,53 @@ body {
 .directions-control-instructions {
   background-color: lightgray !important;
 }
+.foo {
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  border: 2px solid rgba(117, 0, 0, 0.315);
+  background-color: rgba(255, 0, 0, 0.315);
+  border-radius: 5px;
+}
+.foo2 {
+  width: 5px;
+  height: 5px;
+  margin: 5px;
+  background-color: rgb(5, 211, 5);
+  border-radius: 5px;
+}
+.fooL {
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  border: 2px solid rgba(4, 114, 0, 0.315);
+  background-color: rgba(21, 255, 0, 0.315);
+  border-radius: 5px;
+}
+.fooM {
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  border: 2px solid rgba(109, 110, 24, 0.281);
+  background-color: rgba(251, 255, 0, 0.315);
+  border-radius: 5px;
+}
+
+.highWind {
+  background-color: rgba(255, 0, 0, 0.315);
+  border-radius: 10px;
+  border: 2px solid rgba(117, 0, 0, 0.315);
+}
+.lowWind {
+  background-color: rgba(9, 255, 0, 0.315);
+  border-radius: 10px;
+  border: 2px solid rgba(4, 114, 0, 0.315);
+}
+.cautionWind {
+  background-color: rgba(252, 255, 56, 0.281);
+  border-radius: 10px;
+  border: 2px solid rgba(109, 110, 24, 0.281);
+}
 .uk-card-title {
   text-align: center;
 }
@@ -86,6 +133,7 @@ body {
 .uk-navbar-container {
   background-color: rgba(255, 255, 255, 0.315) !important;
   border-radius: 10px;
+  text-align: center;
 }
 
 .parent {
