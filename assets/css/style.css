@@ -53,12 +53,31 @@ body {
 }
 .maps {
   width: 100%;
-  height: 350px;
+  height: 355px;
   position: absolute;
   top: 0;
   bottom: 0;
   border-radius: 5px;
   background-color: black;
+}
+.mapbox-form-label,
+.directions-icon,
+.directions-icon-depart {
+  width: 20px !important;
+  height: 20px !important;
+  z-index: 1 !important;
+  display: flex !important;
+  border-radius: 50% !important;
+}
+.geocoder-pin-right,
+.directions-icon-reverse,
+.directions-reverse {
+  display: none !important;
+  visibility: hidden !important;
+}
+.directions-control,
+.directions-control-instructions {
+  background-color: lightgray !important;
 }
 .uk-card-title {
   text-align: center;
@@ -84,13 +103,13 @@ body {
   grid-area: 2 / 1 / 4 / 13;
 }
 .div3 {
-  grid-area: 4 / 1 / 8 / 7;
+  grid-area: 4 / 1 / 8 / 8;
 }
 .div4 {
   grid-area: 10 / 1 / 8 / 13;
 }
 .div5 {
-  grid-area: 4 / 7 / 8 / 13;
+  grid-area: 4 / 8 / 8 / 13;
 }
 .div6 {
   grid-area: 11 / 1 / 10 / 13;

@@ -130,5 +130,3 @@ loadLocalStorage();
 
 // Notes: 
 // still need to add if statement to apply conditionals on flight days.
-// use direction map instead. Link: https://docs.mapbox.com/mapbox-gl-js/example/mapbox-gl-directions/
-// got directions on map - will need to adjust css
