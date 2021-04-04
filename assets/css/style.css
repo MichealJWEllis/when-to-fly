@@ -1,3 +1,4 @@
+/* Default styling for page */
 * {
   margin: 0px !important;
   padding: 2px;
@@ -79,6 +80,7 @@ body {
 .directions-control-instructions {
   background-color: lightgray !important;
 }
+/* Weather card decoration */
 .foo {
   width: 10px;
   height: 10px;
@@ -135,7 +137,7 @@ body {
   border-radius: 10px;
   text-align: center;
 }
-
+/* Site container and grid positioning */
 .parent {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -143,7 +145,6 @@ body {
   grid-column-gap: 3px;
   grid-row-gap: 3px;
 }
-
 .div1 {
   grid-area: 1 / 1 / 2 / 13;
 }
@@ -179,11 +180,11 @@ input[type="text"] {
   font-size: 15px;
   width: 207px;
 }
-
 #forcastBox {
   display: flex;
   flex: auto;
 }
+/* Media Queries */
 @media screen and (max-width: 600px) {
   #forcastBox {
     flex-direction: column;

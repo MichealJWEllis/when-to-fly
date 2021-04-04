@@ -53,7 +53,6 @@ function zipLookUp(zipInput) {
     .catch(err => {
       console.error(err)
     })
-
 }
 // Adjusts the map to the users current location via zip with an adjusted zoom level.
 // Includes Api key for map 
@@ -92,6 +91,7 @@ function randoVideo() {
     })
   };
 }
+// api call that gets the forecast for the next five days
 function fiveDay() {
   fetch('https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey + '&units=imperial')
     .then(function (response) {
@@ -116,11 +116,8 @@ function fiveDay() {
           test = "lowWind"
         }
         $("#forcastBox").append('<div><div class="uk-card uk-card-body ' + test  + '"><h5>' + fiveDate + '</h5><img src=' + bIcon + '><p>Temp: ' + bTemp + ' °F</p><p>Wind: ' + wind + ' m/s</p></div></div>')
-
-
       }
     })
-
 }
 randoVideo();
 // allows you to select a past used zipcode to submit
