@@ -25,7 +25,7 @@ Parks Map.
 Flying Tips.
 ![Top-Page-Area](./assets/images/flying-tips.png?raw=true "Top-Page-Area")
 Weather.
-![Top-Page-Area](./assets/images/weather.png?raw=true "Top-Page-Area")
+
 
 
 ## 6. Contributions
