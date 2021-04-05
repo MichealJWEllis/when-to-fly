@@ -1,13 +1,3 @@
-1. [Project Title. ](#title)
-2. [Description. ](#desc)
-3. [Installation. ](#installation)
-4. [Web Link. ](#web)
-5. [Screenshots. ](#screenshots)
-6. [Contributions. ](#contributions)
-7. [License. ](#license)
-
-
-
 ## 1. when-to-fly
 Group 7 Project
 
@@ -18,10 +8,6 @@ When-To-Fly is a website inspired by a group of University of Texas at Austin Co
 ## 3. Installation Command
 Launch the site in default browser.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2c48219f26e726f95ef6ffdc320300c0e6a14390
 ## 4. Web Link
 
 
@@ -39,7 +25,7 @@ Parks Map.
 Flying Tips.
 ![Top-Page-Area](./assets/images/flying-tips.png?raw=true "Top-Page-Area")
 Weather.
-![Top-Page-Area](./assets/images/weather.png?raw=true "Top-Page-Area")
+
 
 
 ## 6. Contributions
@@ -47,13 +33,8 @@ Pull requests are welcome. For major changes, please open let repository owners 
 
 ## 7. License
 None
-<<<<<<< HEAD
-=======
-## 4. Screenshots
 
 
-## 5. Contributions
-Pull requests are welcome. For major changes, please open let repository owner know to discuss what would you like to change.
->>>>>>> develop
-=======
->>>>>>> 2c48219f26e726f95ef6ffdc320300c0e6a14390
+
+
+
