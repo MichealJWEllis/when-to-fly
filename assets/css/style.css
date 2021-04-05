@@ -192,4 +192,17 @@ input[type="text"] {
   .uk-card-default {
     text-align: center;
   }
+  .div3 {
+    grid-area: 4 / 1 / 8 / 13;
+  }
+  .div5 {
+    grid-area: 8 / 1 / 8 / 13;
+  }
+  .div4 {
+    grid-area: 11 / 1 / 10 / 13;
+  }
+  .div6 {
+    display: none;
+    visibility: hidden;
+  }
 }
